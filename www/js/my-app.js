@@ -12,7 +12,7 @@ var mainView = myApp.addView('.view-main', {
 });
 
 // Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
+$$(document).on('deviceready', function () {
     console.log("Device is ready!");
 });
 
@@ -22,8 +22,31 @@ $$(document).on('deviceready', function() {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
-
+    
 })
+
+myApp.onPageInit('index', function (page) {
+    // Do something here for "index" page
+    console.log("onPageInit('index'");
+})
+myApp.onPageInit('index', function () {
+   // console.log('e');
+   // var pagex = e.detail.page;
+   // console.log('e'+pagex);
+    /*
+           $$(document).keyup(function(){
+               
+                console.log('index/kk');
+                var values = 'x'; 
+                var what = '#aTextContent';
+                values = values + $$(what).val();
+                console.log('index/kk:');
+                console.log('index/kk: '+values+' :');
+           });
+        });
+    */
+})
+
 
 // Option 2. Using one 'pageInit' event handler for all pages:
 $$(document).on('pageInit', function (e) {
@@ -34,10 +57,24 @@ $$(document).on('pageInit', function (e) {
         // Following code will be executed for page with data-page attribute equal to "about"
         myApp.alert('Here comes About page:'+page.name);
     }
+	
+    if( page.name == 'index') {
+        //console.log('index...1');
+        $$(document).keyup(function(){
+                var from = '#aTextContent';
+                var into = '#aOutptContent';
+                var values = $$(from).val();
+                $$(into).html('++'+values+'++');     
+                console.log('index/kk '+page.name+' '+values);
+        });
+        //console.log('index...2');
+    }
+    
+
 })
 
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
+    myApp.alert('Here comes About page (fixed)');
 })

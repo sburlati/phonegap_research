@@ -8,6 +8,10 @@
                 <i class="icon icon-back"></i>
                 <span>Back</span>
             </a>
+            <a href="index.html" class="home link">
+                <i class="icon home"></i>
+                <span>home</span>
+            </a>
         </div>
         <div class="center sliding">First</div>
         <div class="right">
@@ -17,13 +21,46 @@
 </div>
 <div class="pages">
     <div data-page="first" class="page">
+        
+
         <div class="page-content">
             <div class="content-block">
                 <p>Here is first page!</p>
                 <p>
                   and here is the content of first page
                 </p>
+                
+        <!-- jquery -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- jquery -->
+        <script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
+
+        <!-- using jquery -->
+        <script type="text/javascript">
+        $(function(){
+            $(document).keyup(function(){
+                var yourNameGet= $("#yourName").val();
+               $("#output").html(yourNameGet+"!");
+            });
+        });
+        </script>
+
+                <div id="name">
+                   <label>:Name:</label>
+                   <input type="text" id="yourName" placeholder="Enter a name here">
+                   <hr />
+                       <h1> ------------------------------------- ciao:  <b id="output">! !</b></h1>
+                   <hr />
+               </div>
+
             </div>
+            
+
         </div>
+        
+
     </div>
 </div>

@@ -5,7 +5,7 @@
         phonegap_research: A basic Framework7 template for PhoneGap.
     </description>
     <author email="marco@sburlati.com" href="http://win.sburlati.com">
-        phonegap_research Apache Cordova Team
+        Phonegap Research - from an example of Apache Cordova Team
     </author>
     <content src="index.html" />
     <access origin="*" />

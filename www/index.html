@@ -10,8 +10,15 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
+    
+   <!-- 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-
+    -->
+    
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+    
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -19,7 +26,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-
+    
     <!-- Your app title -->
     <title>My App</title>
 
@@ -31,6 +38,9 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
+    
+    <link rel="stylesheet" href="css/framework7-icons.css">
+
 </head>
 
 <body>
@@ -44,9 +54,11 @@
         <div class="content-block">
             <p>Left panel content goes here (www)</p>
  			<hr />
-			<a href="first.html">first page</a>   <br />
-			<a href="second.html">second page</a> <br />
-			<a href="third.html">third page</a>   <br />
+			<a href="index.html">    home page   (index)</a>   <br />
+			<a href="first.html">    first page  (jquery)</a>   <br />
+			<a href="second.html">   second page </a> <br />
+			<a href="third.html">    third page  - full input layout -</a>   <br />
+			<a href="fourth.html">   fourth page - tab-bar</a>   <br />
 			<hr />
        </div>
     </div>
@@ -59,7 +71,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
+                    <div class="center sliding">BT Research App</div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -73,34 +85,113 @@
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
+                
+
                     <!-- Scrollable page content -->
                     <div class="page-content">
+                        
+        <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
+
+<!--                        
+        <script type="text/javascript">
+        $$(function(){
+            $$(document).keyup(function(){
+                console.log('kk');
+                var yourNameHome= $$("#yourNameHome").val();
+               $$("#outputHome").html("++"+yourNameHome+"++");
+            });
+        });
+        </script>
+-->
+                        
                         <div class="content-block">
                             <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
-                            <hr />
-                            <a href="first.html">first page</a>   <br />
-                            <a href="second.html">second page</a> <br />
-                            <a href="third.html">third page</a>   <br />
-                        </div>
+         <div id="aTextLabel">
+           <label>:aText:</label>
+           <input type="text" id="aTextContent" placeholder="Enter a name here">
+             <h1> ::: ciao ::: <b id="aOutptContent">! !</b></h1>
+       </div>
+                           
+        <!-- Link to another page -->
+        <a href="about.html"><i class="f7-icons">circle</i> About app</a> <br />                           <hr />
+        <a href="index.html"><i class="f7-icons">home</i>   home page   (index)</a> <br />
+        <a href="first.html"><i class="f7-icons">circle</i> first page  (jquery)</a> <br />
+        <a href="second.html"><i class="f7-icons">card</i>  second page </a> <br />
+        <a href="third.html"><i class="f7-icons">collection</i>  third page  - input-layout</a> <br />
+        <a href="fourth.html"><i class="f7-icons">circle</i>     fourth page - tab-bar</a> <br />
+            <hr />
+        <a href="page5.html"><i class="f7-icons">calendar</i> 5 - calendar</a><br />
+        <a href="page6.html"><i class="f7-icons">calendar</i> 6 - calendar</a><br />
+        <a href="page7.html"><i class="f7-icons">calendar</i> 7 - calendar</a><br />
+        <a href="page8.html"><i class="f7-icons">calendar</i> 8 - calendar</a><br />
+            <hr />
+                         </div>
                     </div>
                 </div>
             </div>
             <!-- Bottom Toolbar-->
+            <!--
             <div class="toolbar">
                 <div class="toolbar-inner">
-                    <!-- Toolbar links -->
+                    <!-- Toolbar links - ->
                     <a href="first.html"  class="link">Link 1th</a>
                     <a href="second.html" class="link">Link 2nd</a>
                 </div>
             </div>
+            -->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner">
+                    <a href="about.html" class="link">
+                        <i class="f7-icons">circle</i>
+                        <span class="tabbar-label">a</span>
+                    </a>
+                    <a href="index.html" class="link">
+                        <i class="f7-icons">home</i>
+                        <span class="tabbar-label">0</span>
+                    </a>
+                    <a href="first.html" class="link">
+                        <i class="f7-icons">circle</i>
+                        <span class="tabbar-label">1</span>
+                    </a>
+                    <a href="second.html" class="link">
+                        <i class="f7-icons">card</i>
+                        <span class="tabbar-label">2</span>
+                    </a>
+                    <a href="third.html" class="link">
+                        <i class="f7-icons">collection</i>
+                        <span class="tabbar-label">3</span>
+                    </a>
+                    <a href="fourth.html" class="link">
+                        <i class="f7-icons">circle</i>
+                        <span class="tabbar-label">4</span>
+                    </a>
+                    <a href="page5.html" class="tab-link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label">5</span>
+                    </a>
+                    <a href="page6.html" class="tab-link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label">6</span>
+                    </a>
+                    <a href="page7.html" class="tab-link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label">7</span>
+                    </a>
+                    <a href="page8.html" class="tab-link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label">8</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    
 </body>
 
 </html>
