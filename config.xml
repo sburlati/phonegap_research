@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sburlati.phonegap_research" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.sburlati.phonegap_research" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>phonegap_research</name>
     <description>
-        phonegap_research: A basic Framework7 template for PhoneGap.
+        BT research App: A basic Framework7 template for PhoneGap.
     </description>
     <author email="marco@sburlati.com" href="http://win.sburlati.com">
         BT Research App - from an example of Apache Cordova Team
