@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.sburlati.phonegap_research" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>phonegap_research</name>
+    <name>BT_Res_App</name>
     <description>
         BT research App: A basic Framework7 template for PhoneGap.
     </description>
@@ -19,6 +19,7 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
+		<icon src="icon.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
