@@ -8,7 +8,7 @@ var username = '';
 var password = '';
 var url_matt  = 'empty.html';
 var url_tomma = 'empty.html';
-var url_bibi  = 'bibi.html'; // 'empty.html';
+var url_bibi  = 'empty.html';
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -187,28 +187,30 @@ $$(document).on('pageInit', function (e) {
                 console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
             username = u;
             password = p;
-			url_bibi  = 'bibi.html';
             /*
             if(username == 'stefano' && password == 'bibitomma') {
                 // url_matt  = 'matt.html';
                 url_tomma = 'tomma.html';
                 url_bibi  = 'bibi.html';  
             } */
-            if(username == 'stefano' && password.includes('matt') ) {
+            if(username == 'stefano' || username == 'm' ) {
+				if ( password.includes('matt') ) {
                 url_matt  = 'matt.html';
                 // url_tomma = 'tomma.html';
                 // url_bibi  = 'bibi.html';  
-            } 
-            if(username == 'stefano' && password.includes('tomma') ) {
+				} 
+				if(password.includes('tomma') ) {
                 // url_matt  = 'matt.html';
                 url_tomma = 'tomma.html';
-                // url_bibi  = 'bibi.html';  
-            } 
-            if(username == 'stefano' && password.includes('bibi') ) {
+                // url_bibi  = 'bibi.html';
+				}
+				if(password.includes('bibi') ) {
                 // url_matt  = 'matt.html';
                 // url_tomma = 'tomma.html';
                 url_bibi  = 'bibi.html';  
+				}
             } 
+  
             /*
             else {
                 // url_matt  = 'empty.html';
