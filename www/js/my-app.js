@@ -8,7 +8,7 @@ var username = '';
 var password = '';
 var url_matt  = 'empty.html';
 var url_tomma = 'empty.html';
-var url_bibi  = 'empty.html';
+var url_bibi  = 'bibi.html'; // 'empty.html';
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -187,6 +187,7 @@ $$(document).on('pageInit', function (e) {
                 console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
             username = u;
             password = p;
+			url_bibi  = 'bibi.html';
             /*
             if(username == 'stefano' && password == 'bibitomma') {
                 // url_matt  = 'matt.html';
