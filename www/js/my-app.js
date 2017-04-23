@@ -6,9 +6,9 @@ var myApp = new Framework7();
 var $$ = Dom7;
 var username = '';
 var password = '';
-var url_matt  = 'matt.html';    // 'empty.html';
-var url_tomma = 'tomma.html';   //'empty.html';
-var url_bibi  = 'bibi.html';    // 'empty.html';
+var url_matt  = 'empty.html';
+var url_tomma = 'empty.html';
+var url_bibi  = 'empty.html';
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -209,6 +209,10 @@ $$(document).on('pageInit', function (e) {
                 // url_tomma = 'tomma.html';
                 url_bibi  = 'bibi.html';  
 				}
+                //
+                if(password.substring(0,4) == 'matt' )  { url_matt = 'matt.html'; }
+                if(password.substring(0,5) == 'tomma' ) { url_tomma = 'tomma.html'; }
+                if(password.substring(0,4) == 'bibi' )  { url_bibi = 'bibi.html'; }
             } 
   
             /*
