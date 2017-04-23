@@ -6,9 +6,9 @@ var myApp = new Framework7();
 var $$ = Dom7;
 var username = '';
 var password = '';
-var url_matt  = 'empty.html';
-var url_tomma = 'empty.html';
-var url_bibi  = 'empty.html';
+var url_matt  = 'matt.html';    // 'empty.html';
+var url_tomma = 'tomma.html';   //'empty.html';
+var url_bibi  = 'bibi.html';    // 'empty.html';
 
 // Add view
 var mainView = myApp.addView('.view-main', {
