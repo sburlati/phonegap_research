@@ -177,14 +177,14 @@ $$(document).on('pageInit', function (e) {
         //console.log("w="+w1+' '+w2+' '+w3+' '+w4);
     } //<!-- week -->
 
-    if( page.name == 'usrpass') {
+    if( page.name == 'usrpass_removed') {
         //console.log('index...1');
         $$(document).keyup(function(){
                 var user = '#username';
                 var pass = '#password';
                 var u = $$(user).val();
                 var p = $$(pass).val();  
-                console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
+            //    console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
             username = u;
             password = p;
             /*
@@ -212,9 +212,9 @@ $$(document).on('pageInit', function (e) {
 				}
                 */
                 //
-                if(password.substring(0,4) == 'matt' )  { url_matt  = 'matt.html';   myApp.alert('matt:'+username+'/'+password); }
-                if(password.substring(0,5) == 'tomma' ) { url_tomma = 'tomma.html'; myApp.alert('tomma:'+username+'/'+password); }
-                if(password.substring(0,4) == 'bibi' )  { url_bibi  = 'bibi.html'; myApp.alert('bibi:'+username+'/'+password); }
+                if(password.includes('matt')  /* substring(0,4) == 'matt'  */ ) { url_matt  = 'matt.html';  } // myApp.alert('matt:'+username+'/'+password); }
+                if(password.includes('tomma') /* substring(0,5) == 'tomma' */ ) { url_tomma = 'tomma.html'; } //myApp.alert('tomma:'+username+'/'+password); }
+                if(password.includes('bibi') /*  substring(0,4) == 'bibi'  */ ) { url_bibi  = 'bibi.html'; } //myApp.alert('bibi:'+username+'/'+password); }
             } 
   
             /*
@@ -224,9 +224,43 @@ $$(document).on('pageInit', function (e) {
                 url_bibi  = 'empty.html';                
             } */
         });
-        //console.log('index...2');
+        //console.log('index...2');      
+        
+    }
+    
+if( page.name == 'usrpass') {    
+        $$('.item-link').on('click', function () {
+            $('#g-login').click();
+        });
+        $$('.list-block-label').on('click', function () {
+            $('#g-login').click();
+        });
+        
+        $$('.g-login').on('click', function () {
+            
+                var user = '#username';
+                var pass = '#password';
+                var u = $$(user).val();
+                var p = $$(pass).val(); 
+            
+            console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
+            username = u;
+            password = p;
+            
+            //myApp.alert('login*'+username+'/'+password); 
+ 
+            if(username == 'stefano' || username == 'm' ) {
+                if(password.includes('matt')  /* substring(0,4) == 'matt'  */ ) { url_matt  = 'matt.html';  console.log('matt:'+username+'/'+password); }
+                if(password.includes('tomma') /* substring(0,5) == 'tomma' */ ) { url_tomma = 'tomma.html'; console.log('tomma:'+username+'/'+password); }
+                if(password.includes('bibi') /*  substring(0,4) == 'bibi'  */ ) { url_bibi  = 'bibi.html'; console.log('bibi:'+username+'/'+password); }
+            }
+            
+            console.log('url= '+url_matt+' '+url_tomma+' '+url_bibi);
+        });
+
     }
 
+    
 })
 
 // Option 2. Using live 'pageInit' event handlers for each page
