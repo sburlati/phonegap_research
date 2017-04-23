@@ -194,6 +194,7 @@ $$(document).on('pageInit', function (e) {
                 url_bibi  = 'bibi.html';  
             } */
             if(username == 'stefano' || username == 'm' ) {
+                /*
 				if ( password.includes('matt') ) {
                 url_matt  = 'matt.html';
                 // url_tomma = 'tomma.html';
@@ -209,10 +210,11 @@ $$(document).on('pageInit', function (e) {
                 // url_tomma = 'tomma.html';
                 url_bibi  = 'bibi.html';  
 				}
+                */
                 //
-                if(password.substring(0,4) == 'matt' )  { url_matt = 'matt.html'; }
-                if(password.substring(0,5) == 'tomma' ) { url_tomma = 'tomma.html'; }
-                if(password.substring(0,4) == 'bibi' )  { url_bibi = 'bibi.html'; }
+                if(password.substring(0,4) == 'matt' )  { url_matt  = 'matt.html';   myApp.alert('matt:'+username+'/'+password); }
+                if(password.substring(0,5) == 'tomma' ) { url_tomma = 'tomma.html'; myApp.alert('tomma:'+username+'/'+password); }
+                if(password.substring(0,4) == 'bibi' )  { url_bibi  = 'bibi.html'; myApp.alert('bibi:'+username+'/'+password); }
             } 
   
             /*
