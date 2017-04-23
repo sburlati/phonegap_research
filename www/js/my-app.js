@@ -254,7 +254,7 @@ if( page.name == 'usrpass') {
                 if(password.includes('tomma') /* substring(0,5) == 'tomma' */ ) { url_tomma = 'tomma.html'; console.log('tomma:'+username+'/'+password); }
                 if(password.includes('bibi') /*  substring(0,4) == 'bibi'  */ ) { url_bibi  = 'bibi.html'; console.log('bibi:'+username+'/'+password); }
             }
-            
+            myApp.alert('url= '+url_matt+' '+url_tomma+' '+url_bibi);
             console.log('url= '+url_matt+' '+url_tomma+' '+url_bibi);
         });
 
