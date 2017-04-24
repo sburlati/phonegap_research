@@ -232,7 +232,7 @@ $$(document).on('pageInit', function (e) {
         */
     });
     $$('.s-void-r').on('click', function () {
-        remote = '';     
+        remote = '.';     
         console.log(' remote='+remote);
         /*
         if( url_matt.includes('matt.html')   )   { url_matt  = 'matt.html'; }
