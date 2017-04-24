@@ -177,58 +177,80 @@ $$(document).on('pageInit', function (e) {
         //console.log("w="+w1+' '+w2+' '+w3+' '+w4);
     } //<!-- week -->
 
-    if( page.name == 'usrpass_removed') {
-        //console.log('index...1');
-        $$(document).keyup(function(){
-                var user = '#username';
-                var pass = '#password';
-                var u = $$(user).val();
-                var p = $$(pass).val();  
-            //    console.log('user/pass '+page.name+' '+'u='+u+' '+'p='+p);
-            username = u;
-            password = p;
-            /*
-            if(username == 'stefano' && password == 'bibitomma') {
-                // url_matt  = 'matt.html';
-                url_tomma = 'tomma.html';
-                url_bibi  = 'bibi.html';  
-            } */
-            if(username == 'stefano' || username == 'm' ) {
-                /*
-				if ( password.includes('matt') ) {
-                url_matt  = 'matt.html';
-                // url_tomma = 'tomma.html';
-                // url_bibi  = 'bibi.html';  
-				} 
-				if(password.includes('tomma') ) {
-                // url_matt  = 'matt.html';
-                url_tomma = 'tomma.html';
-                // url_bibi  = 'bibi.html';
-				}
-				if(password.includes('bibi') ) {
-                // url_matt  = 'matt.html';
-                // url_tomma = 'tomma.html';
-                url_bibi  = 'bibi.html';  
-				}
-                */
-                //
-                if(password.includes('matt')  /* substring(0,4) == 'matt'  */ ) { url_matt  = 'matt.html';  } // myApp.alert('matt:'+username+'/'+password); }
-                if(password.includes('tomma') /* substring(0,5) == 'tomma' */ ) { url_tomma = 'tomma.html'; } //myApp.alert('tomma:'+username+'/'+password); }
-                if(password.includes('bibi') /*  substring(0,4) == 'bibi'  */ ) { url_bibi  = 'bibi.html'; } //myApp.alert('bibi:'+username+'/'+password); }
-            } 
-  
-            /*
-            else {
-                // url_matt  = 'empty.html';
-                url_tomma = 'empty.html';
-                url_bibi  = 'empty.html';                
-            } */
-        });
-        //console.log('index...2');      
+    if( page.name == 'weekU') {
+        //init
+        var w1=false; var w2=false; var w3=false; var w4=true;
+        var values = '';
+        var remote = 'http://192.168.1.137:3000/remote';
+        w1= true; w2=true; w3=true;
+        //
+        $('#s-matt').click();
+        $('#s-matt').click();
+        $('#s-tomma').click();
+        $('#s-tomma').click();
+        $('#s-bibi').click();
+        $('#s-bibi').click();
+        //
+     
+    //myApp.alert('Username: ' + username + ', Password: '+ password);
         
-    }
+        //console.log("w="+w1+' '+w2+' '+w3+' '+w4);
+    $$('.s-matt').on('click', function () {
+        var into = '#wrapper-1-matt'; // $$('#s-matt').html('');
+        var url  = remote + '/' + url_matt; //'matt.html';
+        //var from = into;
+        //if(values === '' ) { values = ' @ '+ $(from).data(); }
+        //console.log('.s-matt'+' '+page.name+' :'+values+': ');
+        if(w1) {$$(into).html('<hr />');} else { $(into).load(url); } 
+        w1=!w1;    
+        //console.log(' '+into+' '+page.name+' '+'w='+w1+' '+w2+' '+w3+' '+w4);
+    });
+        
+    $$('.s-tomma').on('click', function () {
+        var into = '#wrapper-2-tomma'; // $$('#s-tomma').html('');
+        var url  = remote + '/' + url_tomma; // 'tomma.html';
+        if(w2) {$$(into).html('<hr />');} else { $(into).load(url); } 
+        w2=!w2;     
+        //console.log(' '+into+' '+page.name+' '+'w='+w1+' '+w2+' '+w3+' '+w4);
+    });
+        
+    $$('.s-bibi').on('click', function () {
+        var into = '#wrapper-3-bibi'; // $$('#s-bibi').html('');
+        var url  = remote + '/' + url_bibi; // 'bibi.html';
+        if(w3) {$$(into).html('<hr />');} else { $(into).load(url); } 
+        w3=!w3;     
+        //console.log(' '+into+' '+page.name+' '+'w='+w1+' '+w2+' '+w3+' '+w4); 
+    });
+        
+    $$('.s-void-l').on('click', function () {
+        remote = 'http://192.168.1.137:3000/remote';     
+        console.log(' remote='+remote);
+        if( url_matt.includes('matt.html')   )   { url_matt  = remote + '/' + 'matt.html'; }
+        if( url_tomma.includes('tomma.html') )   { url_tomma = remote + '/' + 'tomma.html'; }
+        if( url_bibi.includes('bibi.html')   )   { url_bibi  = remote + '/' + 'bibi.html'; }
+    });
+    $$('.s-void-r').on('click', function () {
+        remote = '';     
+        console.log(' remote='+remote);
+        if( url_matt.includes('matt.html')   )   { url_matt  = 'matt.html'; }
+        if( url_tomma.includes('tomma.html') )   { url_tomma = 'tomma.html'; }
+        if( url_bibi.includes('bibi.html')   )   { url_bibi  = 'bibi.html'; }
+    });
+        
+    $$('.s-four').on('click', function () {
+        var into = '#wrapper-4-four'; $$('#s-four').html('');
+        if(w4) {$$(into).html('<hr />');} else {$$(into).html('-'); } 
+        w4=!w4;     
+        //console.log(' '+into+' '+page.name+' '+'w='+w1+' '+w2+' '+w3+' '+w4);
+    });
+ 
+        //console.log("w="+w1+' '+w2+' '+w3+' '+w4);
+    } //<!-- week -->
     
-if( page.name == 'usrpass') {    
+    
+
+    
+    if( page.name == 'usrpass') {    
         $$('.item-link').on('click', function () {
             $('#g-login').click();
         });
@@ -254,7 +276,7 @@ if( page.name == 'usrpass') {
                 if(password.includes('tomma') /* substring(0,5) == 'tomma' */ ) { url_tomma = 'tomma.html'; console.log('tomma:'+username+'/'+password); }
                 if(password.includes('bibi') /*  substring(0,4) == 'bibi'  */ ) { url_bibi  = 'bibi.html'; console.log('bibi:'+username+'/'+password); }
             }
-            myApp.alert('url= '+url_matt+' '+url_tomma+' '+url_bibi);
+            //myApp.alert('url= '+url_matt+' '+url_tomma+' '+url_bibi);
             console.log('url= '+url_matt+' '+url_tomma+' '+url_bibi);
         });
 
