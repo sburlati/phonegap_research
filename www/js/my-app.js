@@ -9,6 +9,7 @@ var password = '';
 var url_matt  = 'empty.html';
 var url_tomma = 'empty.html';
 var url_bibi  = 'empty.html';
+var url_remote_default= 'http://lnx.sburlati.com/BT_Res_App/www_remote'; 
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -181,7 +182,7 @@ $$(document).on('pageInit', function (e) {
         //init
         var w1=false; var w2=false; var w3=false; var w4=true;
         var values = '';
-        var remote = 'http://192.168.1.137:3000/remote';
+        var remote = url_remote_default; // 'http://192.168.1.137:3000/remote';
         w1= true; w2=true; w3=true;
         //
         $('#s-matt').click();
@@ -223,7 +224,7 @@ $$(document).on('pageInit', function (e) {
     });
         
     $$('.s-void-l').on('click', function () {
-        remote = 'http://192.168.1.137:3000/remote';     
+        remote = url_remote_default; // 'http://192.168.1.137:3000/remote';    
         console.log(' remote='+remote);
         /*
         if( url_matt.includes('matt.html')   )   { url_matt  = remote + '/' + 'matt.html'; }

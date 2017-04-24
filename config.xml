@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sburlati.phonegap_research" version="1.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>BT_Res_App_108</name>
+<widget id="com.sburlati.phonegap_research" version="1.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BT_Res_App_109</name>
     <description>
         BT research App: A basic Framework7 template for PhoneGap.
     </description>
