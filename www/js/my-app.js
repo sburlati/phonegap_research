@@ -225,16 +225,20 @@ $$(document).on('pageInit', function (e) {
     $$('.s-void-l').on('click', function () {
         remote = 'http://192.168.1.137:3000/remote';     
         console.log(' remote='+remote);
+        /*
         if( url_matt.includes('matt.html')   )   { url_matt  = remote + '/' + 'matt.html'; }
         if( url_tomma.includes('tomma.html') )   { url_tomma = remote + '/' + 'tomma.html'; }
         if( url_bibi.includes('bibi.html')   )   { url_bibi  = remote + '/' + 'bibi.html'; }
+        */
     });
     $$('.s-void-r').on('click', function () {
         remote = '';     
         console.log(' remote='+remote);
+        /*
         if( url_matt.includes('matt.html')   )   { url_matt  = 'matt.html'; }
         if( url_tomma.includes('tomma.html') )   { url_tomma = 'tomma.html'; }
         if( url_bibi.includes('bibi.html')   )   { url_bibi  = 'bibi.html'; }
+        */
     });
         
     $$('.s-four').on('click', function () {
