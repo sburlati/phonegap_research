@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sburlati.phonegap_research" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>phonegap_research</name>
+<widget id="com.sburlati.phonegap_research" version="1.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BT_Res_App_108</name>
     <description>
-        phonegap_research: A basic Framework7 template for PhoneGap.
+        BT research App: A basic Framework7 template for PhoneGap.
     </description>
     <author email="marco@sburlati.com" href="http://win.sburlati.com">
-        Phonegap Research - from an example of Apache Cordova Team
+        BT Research App - from an example of Apache Cordova Team
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -15,5 +15,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/logo.png" />
     <preference name="DisallowOverscroll" value="true" />
 </widget>

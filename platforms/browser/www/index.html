@@ -11,6 +11,9 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
     
+   <!-- 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
     
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
@@ -34,6 +37,7 @@
 
     <link rel="stylesheet" href="css/styles.css">
     
+    <link rel="stylesheet" href="css/framework7-icons.css">
 
 </head>
 
@@ -46,11 +50,23 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
         <div class="content-block">
-            <p>Left panel content goes here (www)</p>
+            <p><i class="f7-icons">home</i> BT Research App</p>
  			<hr />
-			<a href="first.html">first page</a>   <br />
-			<a href="second.html">second page</a> <br />
-			<a href="third.html">third page</a>   <br />
+            <a href="usrpass.html"> <i class="f7-icons">login</i> please log in
+            </a>
+            <hr />
+<br /><br /><br />
+            <hr />
+			<a href="index.html"> <i class="f7-icons">home</i>     Home </a> <br />
+            <hr />
+			<a href="week.html" > <i class="f7-icons">calendar</i> Week </a> <br />
+			<hr />
+			<a href="weekU.html" > <i class="f7-icons">calendar</i> Week (updated) </a> <br />
+			<hr />
+            
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />            <hr />
+			<a href="about.html"> <i class="f7-icons">circle</i>   About </a> <br />
 			<hr />
        </div>
     </div>
@@ -63,7 +79,10 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">BT Research App</div>
+                    <div class="center sliding">
+                        &nbsp; <i class="f7-icons">home</i>
+                        <span> &nbsp; BT Research App</span>
+                    </div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -82,56 +101,112 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         
-        <!-- jquery -->
-		<script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
         <script type="text/javascript" src="js/my-app.js"></script>
 
-                        
+<!--                        
         <script type="text/javascript">
-        $(function(){
-            $(document).keyup(function(){
-                var yourNameGet= $("#yourNameIndex").val();
-               $("#outputIndex").html("++"+yourNameGet+"++");
+        $$(function(){
+            $$(document).keyup(function(){
+                console.log('kk');
+                var yourNameHome= $$("#yourNameHome").val();
+               $$("#outputHome").html("++"+yourNameHome+"++");
             });
         });
         </script>
+-->
+           
 
-        <div id="nameIndex">
-
-            <br /> <br /> <br />
-
-           <label>:Name:</label>
-           <input type="text" id="yourNameIndex" placeholder="Enter a name here">
-             <h1> ::: ciao ::: <b id="outputIndex">! !</b></h1>
-       </div>
-                        
                         <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
-                            <hr />
-                            <a href="first.html">first page</a>   <br />
-                            <a href="second.html">second page</a> <br />
                             
-
-                            <a href="third.html">third page</a>   <br />
-                        </div>
+                            
+            <hr />
+        <a href="usrpass.html"> <!-- class="open-login-screen"> -->
+            <i class="f7-icons">login</i> please log in
+        </a>
+            <hr />
+<br /><br /><br />                            
+                    
+        <!-- Link to another page -->
+            <hr />
+        <a href="index.html"><i class="f7-icons">home</i>     Home </a> <br />
+            <hr />
+        <a href="week.html" ><i class="f7-icons">calendar</i> Week </a><br />
+            <hr />
+        <a href="weekU.html" > <i class="f7-icons">calendar</i> Week (updated) </a> <br />
+			<hr />
+              
+                            
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+            <hr />
+        <a href="about.html"><i class="f7-icons">circle</i> About app</a> <br />                           <hr />
+                      </div>
                     </div>
                 </div>
             </div>
             <!-- Bottom Toolbar-->
+            <!--
             <div class="toolbar">
                 <div class="toolbar-inner">
-                    <!-- Toolbar links -->
+                    <!-- Toolbar links - ->
                     <a href="first.html"  class="link">Link 1th</a>
                     <a href="second.html" class="link">Link 2nd</a>
                 </div>
             </div>
+            -->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner">
+                    <a href="usrpass.html" class="link">
+                        <i class="f7-icons">login</i>
+                        <span class="tabbar-label">login</span>
+                    </a>
+                    <a href="#" class="link">
+                        <i class="f7-icons"></i>
+                        <span class="tabbar-label">--</span>
+                    </a>
+                    <a href="index.html" class="link">
+                        <i class="f7-icons">home</i>
+                        <span class="tabbar-label">home</span>
+                    </a>
+                    <a href="#" class="link">
+                        <i class="f7-icons"></i>
+                        <span class="tabbar-label">--</span>
+                    </a>
+                    <a href="week.html" class="link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label">week</span>
+                    </a>
+                    <a href="weekU.html" class="link">
+                        <i class="f7-icons">calendar</i>
+                        <span class="tabbar-label"> &nbsp; week<br />updated</span>
+                    </a>
+                    <a href="#" class="link">
+                        <i class="f7-icons"></i>
+                        <span class="tabbar-label"></span>
+                    </a>
+                    <a href="#" class="link">
+                        <i class="f7-icons"></i>
+                        <span class="tabbar-label"></span>
+                    </a>
+                    <a href="#" class="link">
+                        <i class="f7-icons"></i>
+                        <span class="tabbar-label"></span>
+                    </a>
+                    <a href="about.html" class="link">
+                        <i class="f7-icons">circle</i>
+                        <span class="tabbar-label">about</span>
+                    </a>
+                </div>
+            </div>
+      
         </div>
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
+    <!-- jquery -->
+	<script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
+    <!-- -->
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
     
